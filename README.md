@@ -1,7 +1,7 @@
 # hurl README
 
 This extension provides a very basic syntax highlight for .hurl files. More details about Hurl can be located at their website - hurl.dev. I am in no way related or involved
-with this project.
+with the hurl project.
 
 ## Features
 
