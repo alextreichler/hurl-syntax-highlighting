@@ -3,6 +3,7 @@
   "displayName": "hurl syntax highlighting",
   "description": "syntax highlighting for Hurl",
   "version": "0.0.1",
+  "publisher": "Alex Treichler",
   "engines": {
     "vscode": "^1.74.0"
   },
