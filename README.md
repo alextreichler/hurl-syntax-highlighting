@@ -7,7 +7,6 @@ with the hurl project.
 
 This extension makes it easier to read your hurl files. There are some additional syntax hightlighting that will need to be added in the future.
 
-\!\[syntax hightlighting\]\(images/syntax_highlighting_hurl.gif\)
 
 
 ### 1.0.0
