@@ -1,0 +1,29 @@
+{
+  "name": "hurl",
+  "displayName": "hurl syntax highlighting",
+  "description": "syntax highlighting for Hurl",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.74.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [{
+      "id": "hurl",
+      "aliases": ["Hurl", "hurl"],
+      "extensions": [".hurl"],
+      "configuration": "./language-configuration.json"
+    }],
+    "grammars": [{
+      "language": "hurl",
+      "scopeName": "source.hurl",
+      "path": "./syntaxes/hurl.tmLanguage.json"
+    }]
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/microsoft/vscode-wordcount.git"
+  }
+}

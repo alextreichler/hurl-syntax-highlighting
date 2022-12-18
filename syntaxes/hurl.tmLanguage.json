@@ -1,0 +1,111 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "Hurl",
+	"patterns": [
+		{
+			"include": "#comments"
+		},
+		{
+			"include": "#keywords"
+		},
+		{
+			"include": "#strings"
+		},
+		{
+			"include": "#numeric"
+		},
+		{
+			"include": "#sections"
+		},
+		{
+			"include": "#query"
+		}
+	],
+	"repository": {
+		"keywords": {
+			"patterns": [{
+				"name": "keyword.control.hurl",
+				"match": "\\b(GET|HEAD|POST|PUT|DELETE|CONNECT|OPTIONS|TRACE|PATCH)\\b"
+			},
+			{
+				"name": "keyword.operator.hurl",
+				"match": "[-^=\\*\\|\\>\\<]"
+			  }
+			]
+		},
+		"comments": {
+			"patterns": [{
+				"name": "comment.block.hurl",
+				"match": "(?=#).*"
+			}
+			]
+		},
+		"strings": {
+			"name": "string.quoted.double.hurl",
+			"begin": "\"",
+			"end": "\"",
+			"patterns": [
+				{
+					"name": "constant.character.escape.hurl",
+					"match": "\\\\."
+				}
+			]
+		},
+		"sections":{
+			"patterns": [
+				{
+					"name": "support.function.hurl",
+					"match": "\\b(status|url|header|cookie|body|xpath|jsonpath|regex|variable|duration|sha256|md5|bytes)\\b"
+				}
+			]
+		},
+		"query":{
+			"patterns": [
+				{
+					"name": "constant.character.hurl",
+					"match": "\\b(Asserts|FormParams|Options|Captures|QueryStringParams|MultipartFormData|Cookies)\\b"
+				}
+			]
+		},
+		"float_literals": {
+		"comment": "Floats are decimal or hexadecimal",
+		"match": "(?x)\n  \\b(?<!')\n  (?:  # Decimal\n    ([0-9][_0-9]*\\.[0-9][_0-9]*(?:[eE][-+]?[0-9][_0-9]*)?\n    |[0-9][_0-9]*[eE][-+]?[0-9][_0-9]*\n    )\n  |    # Hexadecimal\n    (0[xX]_*[0-9a-fA-F][_0-9a-fA-F]*\\.[0-9a-fA-F][_0-9a-fA-F]*(?:[pP][-+]?[0-9][_0-9]*)?\n    |0[xX]_*[0-9a-fA-F][_0-9a-fA-F]*[pP][-+]?[0-9][_0-9]*\n    )\n  )\\b(?!')",
+		"captures": {
+			"1": {
+			"name": "constant.numeric.floating.decimal.hurl"
+			},
+			"2": {
+			"name": "constant.numeric.floating.hexadecimal.hurl"
+			}
+		}
+		},
+		"integer_literals": {
+		"match": "(?x)\n  \\b(?<!')\n  (?:\n    ([0-9][_0-9]*)                    # Decimal integer\n  | (0[xX]_*[0-9a-fA-F][_0-9a-fA-F]*) # Hexadecimal integer\n  | (0[oO]_*[0-7][_0-7]*)             # Octal integer\n  | (0[bB]_*[01][_01]*)               # Binary integer\n  )\n  \\b(?!')",
+		"captures": {
+			"1": {
+			"name": "constant.numeric.integral.decimal.hurl"
+			},
+			"2": {
+			"name": "constant.numeric.integral.hexadecimal.hurl"
+			},
+			"3": {
+			"name": "constant.numeric.integral.octal.hurl"
+			},
+			"4": {
+			"name": "constant.numeric.integral.binary.hurl"
+			}
+		}
+		},
+		"numeric": {
+		"patterns": [
+			{
+			"include": "#float_literals"
+			},
+			{
+			"include": "#integer_literals"
+			}
+		]
+		}
+		},
+	"scopeName": "source.hurl"
+}
